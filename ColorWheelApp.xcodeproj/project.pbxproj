@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		85347E812C707C0E00755968 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347E802C707C0E00755968 /* AppDelegate.swift */; };
 		85347E832C707C0E00755968 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347E822C707C0E00755968 /* SceneDelegate.swift */; };
-		85347E852C707C0E00755968 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347E842C707C0E00755968 /* ViewController.swift */; };
+		85347E852C707C0E00755968 /* ColorWheelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347E842C707C0E00755968 /* ColorWheelViewController.swift */; };
 		85347E882C707C0E00755968 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 85347E872C707C0E00755968 /* Base */; };
 		85347E8A2C707C1000755968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85347E892C707C1000755968 /* Assets.xcassets */; };
 		85347E8D2C707C1000755968 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 85347E8C2C707C1000755968 /* Base */; };
+		85347E972C707DC100755968 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347E962C707DC100755968 /* ColorModel.swift */; };
+		85347E9A2C707DEA00755968 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347E992C707DEA00755968 /* ColorViewModel.swift */; };
+		85347EA42C707E8500755968 /* SegmentedControlCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85347EA32C707E8500755968 /* SegmentedControlCollectionViewCell.xib */; };
+		85347EA52C707E8500755968 /* SegmentedControlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347EA22C707E8500755968 /* SegmentedControlCollectionViewCell.swift */; };
+		85347EA72C7080C000755968 /* ColorWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347EA62C7080C000755968 /* ColorWheelView.swift */; };
+		85347EAB2C70857400755968 /* BrightnessSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85347EAA2C70857400755968 /* BrightnessSliderTableViewCell.xib */; };
+		85347EAC2C70857400755968 /* BrightnessSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347EA92C70857400755968 /* BrightnessSliderTableViewCell.swift */; };
+		85347ECF2C7095D800755968 /* SegmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347ECE2C7095D800755968 /* SegmentCollectionViewCell.swift */; };
+		85347ED12C70967D00755968 /* NameNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347ED02C70967D00755968 /* NameNotificationExtension.swift */; };
+		85347ED52C70A2C000755968 /* ColorWheelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85347ED42C70A2C000755968 /* ColorWheelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		85347E7D2C707C0E00755968 /* ColorWheelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorWheelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85347E802C707C0E00755968 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85347E822C707C0E00755968 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85347E842C707C0E00755968 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85347E842C707C0E00755968 /* ColorWheelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWheelViewController.swift; sourceTree = "<group>"; };
 		85347E872C707C0E00755968 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85347E892C707C1000755968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85347E8C2C707C1000755968 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85347E8E2C707C1000755968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85347E962C707DC100755968 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		85347E992C707DEA00755968 /* ColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		85347EA22C707E8500755968 /* SegmentedControlCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlCollectionViewCell.swift; sourceTree = "<group>"; };
+		85347EA32C707E8500755968 /* SegmentedControlCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedControlCollectionViewCell.xib; sourceTree = "<group>"; };
+		85347EA62C7080C000755968 /* ColorWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWheelView.swift; sourceTree = "<group>"; };
+		85347EA92C70857400755968 /* BrightnessSliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSliderTableViewCell.swift; sourceTree = "<group>"; };
+		85347EAA2C70857400755968 /* BrightnessSliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrightnessSliderTableViewCell.xib; sourceTree = "<group>"; };
+		85347ECE2C7095D800755968 /* SegmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		85347ED02C70967D00755968 /* NameNotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameNotificationExtension.swift; sourceTree = "<group>"; };
+		85347ED42C70A2C000755968 /* ColorWheelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWheelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,105 @@
 		85347E7F2C707C0E00755968 /* ColorWheelApp */ = {
 			isa = PBXGroup;
 			children = (
-				85347E802C707C0E00755968 /* AppDelegate.swift */,
-				85347E822C707C0E00755968 /* SceneDelegate.swift */,
-				85347E842C707C0E00755968 /* ViewController.swift */,
-				85347E862C707C0E00755968 /* Main.storyboard */,
-				85347E892C707C1000755968 /* Assets.xcassets */,
-				85347E8B2C707C1000755968 /* LaunchScreen.storyboard */,
+				85347E982C707DC700755968 /* Model */,
+				85347E9B2C707DF000755968 /* ViewModel */,
+				85347E952C707DA600755968 /* View */,
+				85347E942C707D9700755968 /* Resources */,
 				85347E8E2C707C1000755968 /* Info.plist */,
 			);
 			path = ColorWheelApp;
+			sourceTree = "<group>";
+		};
+		85347E942C707D9700755968 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85347E822C707C0E00755968 /* SceneDelegate.swift */,
+				85347E802C707C0E00755968 /* AppDelegate.swift */,
+				85347E892C707C1000755968 /* Assets.xcassets */,
+				85347E8B2C707C1000755968 /* LaunchScreen.storyboard */,
+				85347E862C707C0E00755968 /* Main.storyboard */,
+				85347ED02C70967D00755968 /* NameNotificationExtension.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		85347E952C707DA600755968 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85347EA12C707E4900755968 /* VC */,
+				85347EA02C707E2D00755968 /* TableViewCell */,
+				85347ED32C70A26400755968 /* CustomView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		85347E982C707DC700755968 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85347E962C707DC100755968 /* ColorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85347E9B2C707DF000755968 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				85347E992C707DEA00755968 /* ColorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		85347EA02C707E2D00755968 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				85347EA82C70855700755968 /* Segment Controll TC */,
+				85347EAD2C70857900755968 /* BrightnessSlider TC */,
+				85347ED42C70A2C000755968 /* ColorWheelTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		85347EA12C707E4900755968 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				85347E842C707C0E00755968 /* ColorWheelViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		85347EA82C70855700755968 /* Segment Controll TC */ = {
+			isa = PBXGroup;
+			children = (
+				85347EA22C707E8500755968 /* SegmentedControlCollectionViewCell.swift */,
+				85347EA32C707E8500755968 /* SegmentedControlCollectionViewCell.xib */,
+				85347ED22C70A25500755968 /* SegmentCollectionCell */,
+			);
+			path = "Segment Controll TC";
+			sourceTree = "<group>";
+		};
+		85347EAD2C70857900755968 /* BrightnessSlider TC */ = {
+			isa = PBXGroup;
+			children = (
+				85347EA92C70857400755968 /* BrightnessSliderTableViewCell.swift */,
+				85347EAA2C70857400755968 /* BrightnessSliderTableViewCell.xib */,
+			);
+			path = "BrightnessSlider TC";
+			sourceTree = "<group>";
+		};
+		85347ED22C70A25500755968 /* SegmentCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				85347ECE2C7095D800755968 /* SegmentCollectionViewCell.swift */,
+			);
+			path = SegmentCollectionCell;
+			sourceTree = "<group>";
+		};
+		85347ED32C70A26400755968 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				85347EA62C7080C000755968 /* ColorWheelView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +237,8 @@
 			files = (
 				85347E8A2C707C1000755968 /* Assets.xcassets in Resources */,
 				85347E8D2C707C1000755968 /* Base in Resources */,
+				85347EA42C707E8500755968 /* SegmentedControlCollectionViewCell.xib in Resources */,
+				85347EAB2C70857400755968 /* BrightnessSliderTableViewCell.xib in Resources */,
 				85347E882C707C0E00755968 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +250,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85347E852C707C0E00755968 /* ViewController.swift in Sources */,
+				85347ED52C70A2C000755968 /* ColorWheelTableViewCell.swift in Sources */,
+				85347E852C707C0E00755968 /* ColorWheelViewController.swift in Sources */,
 				85347E812C707C0E00755968 /* AppDelegate.swift in Sources */,
+				85347ECF2C7095D800755968 /* SegmentCollectionViewCell.swift in Sources */,
+				85347E9A2C707DEA00755968 /* ColorViewModel.swift in Sources */,
+				85347EA72C7080C000755968 /* ColorWheelView.swift in Sources */,
 				85347E832C707C0E00755968 /* SceneDelegate.swift in Sources */,
+				85347EAC2C70857400755968 /* BrightnessSliderTableViewCell.swift in Sources */,
+				85347ED12C70967D00755968 /* NameNotificationExtension.swift in Sources */,
+				85347EA52C707E8500755968 /* SegmentedControlCollectionViewCell.swift in Sources */,
+				85347E972C707DC100755968 /* ColorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
