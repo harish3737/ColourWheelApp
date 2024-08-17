@@ -70,6 +70,11 @@ class ColorViewModel {
     func brightness(at index: Int) -> CGFloat {
         return colors[index].brightness
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
+
 
 
