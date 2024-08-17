@@ -18,18 +18,7 @@ class ColorViewModel {
 
     var selectedSegmentIndex: Int = 0 // Tracks the selected segment index
 
-    func updateSelectedColor(at index: Int, with color: UIColor) {
-        var hue: CGFloat = 0
-        var saturation: CGFloat = 0
-        var brightness: CGFloat = 0
-        var alpha: CGFloat = 0
 
-        if color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-            colors[index].hue = hue
-            colors[index].saturation = saturation
-            colors[index].brightness = brightness
-        }
-    }
 
     func color(at index: Int) -> UIColor {
         return colors[index].color
@@ -39,8 +28,6 @@ class ColorViewModel {
         return colors[index].brightness
     }
 
-    func updateBrightness(at index: Int, with brightness: CGFloat) {
-        colors[index].brightness = brightness
-    }
+
 }
 

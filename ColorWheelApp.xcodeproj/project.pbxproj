@@ -103,7 +103,6 @@
 			children = (
 				85347EA12C707E4900755968 /* VC */,
 				85347EA02C707E2D00755968 /* TableViewCell */,
-				85347ED32C70A26400755968 /* CustomView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,7 +128,7 @@
 			children = (
 				85347EA82C70855700755968 /* Segment Controll TC */,
 				85347EAD2C70857900755968 /* BrightnessSlider TC */,
-				85347ED42C70A2C000755968 /* ColorWheelTableViewCell.swift */,
+				85347ED62C70A97D00755968 /* ColourWheel TC */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -175,6 +174,15 @@
 				85347EA62C7080C000755968 /* ColorWheelView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		85347ED62C70A97D00755968 /* ColourWheel TC */ = {
+			isa = PBXGroup;
+			children = (
+				85347ED42C70A2C000755968 /* ColorWheelTableViewCell.swift */,
+				85347ED32C70A26400755968 /* CustomView */,
+			);
+			path = "ColourWheel TC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
