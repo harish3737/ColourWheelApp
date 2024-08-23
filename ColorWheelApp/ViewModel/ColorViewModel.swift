@@ -57,9 +57,13 @@ class ColorViewModel {
     }
 
     @objc private func didUpdateBrightness(_ notification: Notification) {
-        if let brightness = notification.userInfo?["brightness"] as? CGFloat {
-            colors[selectedSegmentIndex].updateBrightness(to: brightness)
+        if let brightness = notification.userInfo?["brightness"] as? Float {
+            print("Brightness Updated: \(brightness)")
+            let updatedBrightness = CGFloat(brightness)
+            colors[selectedSegmentIndex].updateBrightness(to: updatedBrightness)
             onBrightnessChange?() // Notify the view controller of the brightness change
+        }else{
+            print("Brightness key missing or not CGFloat")
         }
     }
 
