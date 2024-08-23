@@ -17,50 +17,70 @@ class ColorViewModel {
 
     var selectedSegmentIndex: Int = 0 {
         didSet {
-            onSegmentChange?()
+//            onSegmentChange?()
+            delegate?.didSelectSegment(at: selectedSegmentIndex)
         }
     }
+    
+    weak var delegate: ColorViewModelDelegate?
 
-    // Closures for binding to the view controller
-    var onSegmentChange: (() -> Void)?
-    var onColorChange: (() -> Void)?
-    var onBrightnessChange: (() -> Void)?
+//    // Closures for binding to the view controller
+//    var onSegmentChange: (() -> Void)?
+//    var onColorChange: (() -> Void)?
+//    var onBrightnessChange: (() -> Void)?
 
-    init() {
-        setupObservers()
-    }
+//    init() {
+////        setupObservers()
+//    }
 
     // Setup NotificationCenter observers in the ViewModel
-    private func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(didSelectSegment(_:)), name: .didSelectSegment, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateBrightness(_:)), name: .didUpdateBrightness, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didSelectColor(_:)), name: .colorWheelDidSelectColor, object: nil)
+//    private func setupObservers() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(didSelectSegment(_:)), name: .didSelectSegment, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateBrightness(_:)), name: .didUpdateBrightness, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(didSelectColor(_:)), name: .colorWheelDidSelectColor, object: nil)
+//    }
+//
+//    @objc private func didSelectSegment(_ notification: Notification) {
+//        if let index = notification.userInfo?["index"] as? Int {
+//            selectedSegmentIndex = index
+//        }
+//    }
+//
+//    @objc private func didSelectColor(_ notification: Notification) {
+//        if let color = notification.userInfo?["color"] as? UIColor {
+//            var hue: CGFloat = 0
+//            var saturation: CGFloat = 0
+//            var brightness: CGFloat = 0
+//            var alpha: CGFloat = 0
+//            color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+//
+//            colors[selectedSegmentIndex] = ColorModel(hue: hue, saturation: saturation, brightness: brightness)
+//            onColorChange?() // Notify the view controller of the color change
+//        }
+//    }
+//
+//    @objc private func didUpdateBrightness(_ notification: Notification) {
+//        if let brightness = notification.userInfo?["brightness"] as? CGFloat {
+//            colors[selectedSegmentIndex].updateBrightness(to: brightness)
+//            onBrightnessChange?() // Notify the view controller of the brightness change
+//        }
+//    }
+    
+    
+    func updateColor(_ color: UIColor, at index: Int) {
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
+        color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        
+        colors[index] = ColorModel(hue: hue, saturation: saturation, brightness: brightness)
+        delegate?.didUpdateColor(at: index, with: color)
     }
 
-    @objc private func didSelectSegment(_ notification: Notification) {
-        if let index = notification.userInfo?["index"] as? Int {
-            selectedSegmentIndex = index
-        }
-    }
-
-    @objc private func didSelectColor(_ notification: Notification) {
-        if let color = notification.userInfo?["color"] as? UIColor {
-            var hue: CGFloat = 0
-            var saturation: CGFloat = 0
-            var brightness: CGFloat = 0
-            var alpha: CGFloat = 0
-            color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-
-            colors[selectedSegmentIndex] = ColorModel(hue: hue, saturation: saturation, brightness: brightness)
-            onColorChange?() // Notify the view controller of the color change
-        }
-    }
-
-    @objc private func didUpdateBrightness(_ notification: Notification) {
-        if let brightness = notification.userInfo?["brightness"] as? CGFloat {
-            colors[selectedSegmentIndex].updateBrightness(to: brightness)
-            onBrightnessChange?() // Notify the view controller of the brightness change
-        }
+    func updateBrightness(_ brightness: CGFloat, at index: Int) {
+        colors[index].updateBrightness(to: brightness)
+        delegate?.didUpdateBrightness(at: index, with: brightness)
     }
 
     func color(at index: Int) -> UIColor {
@@ -71,9 +91,9 @@ class ColorViewModel {
         return colors[index].brightness
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
 }
 
 

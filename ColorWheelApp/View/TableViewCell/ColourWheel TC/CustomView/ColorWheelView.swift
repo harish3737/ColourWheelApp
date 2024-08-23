@@ -46,7 +46,8 @@ class ColorWheelView: UIView {
         if let touch = touches.first {
             let location = touch.location(in: self)
             let color = getColor(at: location)
-            NotificationCenter.default.post(name: .colorWheelDidSelectColor, object: nil, userInfo: ["color": color])
+            viewModel?.updateColor(color, at: selectedIndex)
+//            NotificationCenter.default.post(name: .colorWheelDidSelectColor, object: nil, userInfo: ["color": color])
             setNeedsDisplay()
         }
     }

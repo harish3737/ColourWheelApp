@@ -15,6 +15,7 @@ class SegmentedControlCollectionViewCell: UITableViewCell {
     
     var colors: [UIColor] = []
     var selectedIndex: Int = 0
+    weak var delegate: SegmentedControlCollectionViewCellDelegate?
     
     override func awakeFromNib() {
           super.awakeFromNib()
@@ -61,7 +62,9 @@ class SegmentedControlCollectionViewCell: UITableViewCell {
       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
           selectedIndex = indexPath.item
           collectionView.reloadData()  // Update UI for all cells
-          NotificationCenter.default.post(name: .didSelectSegment, object: nil, userInfo: ["index": indexPath.item])
+          delegate?.didSelectSegmentCollection(at: selectedIndex)
+          
+//          NotificationCenter.default.post(name: .didSelectSegment, object: nil, userInfo: ["index": indexPath.item])
       }
       
       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

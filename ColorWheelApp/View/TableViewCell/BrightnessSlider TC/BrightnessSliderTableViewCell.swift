@@ -16,6 +16,7 @@ class BrightnessSliderTableViewCell: UITableViewCell {
     static let identifier = "BrightnessSliderTableViewCell"
        var viewModel: ColorViewModel?
        var selectedIndex: Int = 0
+        weak var delegate: BrightnessSliderTableViewCellDelegate?
 
        override func awakeFromNib() {
            super.awakeFromNib()
@@ -26,9 +27,10 @@ class BrightnessSliderTableViewCell: UITableViewCell {
        @objc private func sliderValueChanged(_ sender: UISlider) {
            let brightnessValue = sender.value / 100.0
                   updatePercentageLabel(value: sender.value)
+                delegate?.didUpdateBrightness(to: CGFloat(brightnessValue), for: selectedIndex)
                   
-                  // Notify the view controller that the brightness has changed
-                  NotificationCenter.default.post(name: .didUpdateBrightness, object: nil, userInfo: ["brightness": brightnessValue])
+//                  // Notify the view controller that the brightness has changed
+//                  NotificationCenter.default.post(name: .didUpdateBrightness, object: nil, userInfo: ["brightness": brightnessValue])
        }
     
     private func designChanges(){

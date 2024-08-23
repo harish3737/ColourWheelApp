@@ -47,16 +47,17 @@ extension ColorWheelViewController {
     }
     
     private func bindViewModel() {
-            // Bind the view model's closure callbacks to update the UI when the model changes
-            viewModel.onSegmentChange = { [weak self] in
-                self?.tableView.reloadData()
-            }
-            viewModel.onColorChange = { [weak self] in
-                self?.tableView.reloadData()
-            }
-            viewModel.onBrightnessChange = { [weak self] in
-                self?.tableView.reloadData()
-            }
+        viewModel.delegate = self
+//            // Bind the view model's closure callbacks to update the UI when the model changes
+//            viewModel.onSegmentChange = { [weak self] in
+//                self?.tableView.reloadData()
+//            }
+//            viewModel.onColorChange = { [weak self] in
+//                self?.tableView.reloadData()
+//            }
+//            viewModel.onBrightnessChange = { [weak self] in
+//                self?.tableView.reloadData()
+//            }
         }
     
     
@@ -72,6 +73,7 @@ extension ColorWheelViewController: UITableViewDelegate, UITableViewDataSource {
           if indexPath.row == 0 {
               let cell = tableView.dequeueReusableCell(withIdentifier: SegmentedControlCollectionViewCell.identifier, for: indexPath) as! SegmentedControlCollectionViewCell
               cell.configure(with: viewModel.colors.map { $0.color }, selectedIndex: viewModel.selectedSegmentIndex)
+              cell.delegate = self
               cell.backgroundColor = .clear  // Transparent background to blend with overall design
               return cell
           } else if indexPath.row == 1 {
@@ -81,6 +83,7 @@ extension ColorWheelViewController: UITableViewDelegate, UITableViewDataSource {
           } else if indexPath.row == 2 {
               let cell = tableView.dequeueReusableCell(withIdentifier: BrightnessSliderTableViewCell.identifier, for: indexPath) as! BrightnessSliderTableViewCell
               cell.configureSlider(for: viewModel.selectedSegmentIndex, with: viewModel)
+              cell.delegate = self
               cell.backgroundColor = .clear  // Transparent background
               return cell
           }
@@ -101,5 +104,33 @@ extension ColorWheelViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return UITableView.automaticDimension
         }
+    }
+}
+
+
+extension ColorWheelViewController: ColorViewModelDelegate {
+    func didUpdateColor(at index: Int, with color: UIColor) {
+        tableView.reloadData()
+    }
+
+    func didUpdateBrightness(at index: Int, with brightness: CGFloat) {
+        tableView.reloadData()
+    }
+
+    func didSelectSegment(at index: Int) {
+//        viewModel.selectedSegmentIndex = index
+        tableView.reloadData()
+    }
+}
+
+extension ColorWheelViewController: SegmentedControlCollectionViewCellDelegate {
+    func didSelectSegmentCollection(at index: Int) {
+        viewModel.selectedSegmentIndex = index
+    }
+}
+
+extension ColorWheelViewController: BrightnessSliderTableViewCellDelegate {
+    func didUpdateBrightness(to brightness: CGFloat, for index: Int) {
+        viewModel.updateBrightness(brightness, at: index)
     }
 }
